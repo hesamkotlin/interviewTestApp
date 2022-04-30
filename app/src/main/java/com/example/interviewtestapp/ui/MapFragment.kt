@@ -1,4 +1,4 @@
-package com.example.interviewtestapp
+package com.example.interviewtestapp.ui
 
 import android.app.Activity
 import android.content.pm.PackageManager

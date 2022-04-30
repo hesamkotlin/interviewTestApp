@@ -7,11 +7,11 @@
 
     <fragment
         android:id="@+id/mapFragment"
-        android:name="com.example.interviewtestapp.MapFragment"
+        android:name="com.example.interviewtestapp.ui.MapFragment"
         android:label="MapFragment" />
     <fragment
         android:id="@+id/authFragmnet"
-        android:name="com.example.interviewtestapp.AuthFragmnet"
+        android:name="com.example.interviewtestapp.ui.AuthFragmnet"
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth" >
         <action
