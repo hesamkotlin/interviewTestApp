@@ -14,4 +14,11 @@
     <string name="female">خانم</string>
     <string name="nextstep">مرحله بعد</string>
     <string name="userslist">لیست کاربران</string>
+    <string name="first_name_empty_error">نام نمیتواند خالی باشد</string>
+    <string name="first_name_length_error">نام نمیتواند کمتر از دو حرف باشد</string>
+    <string name="last_name_empty_error">نام خانوادگی نمیتواند خالی باشد</string>
+    <string name="last_name_length_error">نام خانوادگی نمیتواند کمتر از دو حرف باشد</string>
+    <string name="phone_number_empty_error">شماره تلفن نمیتواند خالی باشد</string>
+    <string name="phone_number_format_error">فرمت شماره تلفن صحیح نیست</string>
+    <string name="address_empty_error">آدرس نمیتواند خالی باشد</string>
 </resources>
