@@ -11,7 +11,7 @@
         android:label="MapFragment" />
     <fragment
         android:id="@+id/authFragmnet"
-        android:name="com.example.interviewtestapp.ui.AuthFragmnet"
+        android:name="com.example.interviewtestapp.ui.AuthFragment"
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth" >
         <action

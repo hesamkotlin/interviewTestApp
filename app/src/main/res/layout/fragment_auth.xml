@@ -1,202 +1,227 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.AuthFragmnet">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.example.interviewtestapp.ui.viewmodel.AuthViewModel" />
+
+    </data>
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".ui.AuthFragment">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_right"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_end="@dimen/space_16"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_left"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintGuide_begin="@dimen/space_16"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:titleTextColor="?attr/colorOnPrimary">
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_end="@dimen/space_16"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintGuide_begin="@dimen/space_16"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextColor="?attr/colorOnPrimary">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/space_16"
+                    android:fontFamily="@font/lalezar"
+                    android:text="@string/Authentication"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/font_title_size" />
+            </com.google.android.material.appbar.MaterialToolbar>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/im_background1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_40"
+                android:layout_margin="@dimen/space_20"
+                app:cardBackgroundColor="@color/background"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/space_8"
+                    android:fontFamily="@font/lalezar"
+                    android:text="@string/enterdata" />
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textinput1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_16"
+                android:fontFamily="@font/lalezar"
+                android:hint="@string/name"
+                android:maxLines="1"
+                android:text="@={viewmodel.firstName}"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/im_background1" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textinput2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_16"
+                android:fontFamily="@font/lalezar"
+                android:hint="@string/family"
+                android:maxLines="1"
+                android:text="@={viewmodel.lastName}"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/textinput1" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textinput3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_16"
+                android:fontFamily="@font/lalezar"
+                android:hint="@string/phonenumber"
+                android:inputType="number"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:text="@={viewmodel.coordinateMobile}"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/textinput2" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textinput4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_16"
+                android:fontFamily="@font/lalezar"
+                android:hint="@string/homephonenumber"
+                android:inputType="number"
+                android:maxLength="11"
+                android:maxLines="1"
+                android:text="@={viewmodel.coordinatePhoneNumber}"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/textinput3" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_16"
+                android:layout_marginStart="@dimen/space_8"
+                android:layout_marginTop="@dimen/space_20"
+                android:layout_marginEnd="@dimen/space_8"
+
+                android:backgroundTint="@color/background"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textinput4" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textinput5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_16"
+                android:fontFamily="@font/lalezar"
+                android:hint="@string/address"
+                android:maxLines="1"
+                android:text="@={viewmodel.address}"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/cardview" />
 
             <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:layout_marginEnd="@dimen/space_16"
-                android:fontFamily="@font/lalezar"
-                android:text="@string/Authentication"
-                android:textColor="@color/white"
-                android:textSize="@dimen/font_title_size" />
-        </com.google.android.material.appbar.MaterialToolbar>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/im_background1"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/space_40"
-            android:layout_margin="@dimen/space_20"
-            app:cardBackgroundColor="@color/background"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="@dimen/space_8"
-                android:fontFamily="@font/lalezar"
-                android:text="@string/enterdata" />
-
-        </androidx.cardview.widget.CardView>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textinput1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_16"
-            android:fontFamily="@font/lalezar"
-            android:hint="@string/name"
-            android:maxLines="1"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/im_background1" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textinput2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_16"
-            android:fontFamily="@font/lalezar"
-            android:hint="@string/family"
-            android:maxLines="1"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/textinput1" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textinput3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_16"
-            android:fontFamily="@font/lalezar"
-            android:hint="@string/phonenumber"
-            android:maxLines="1"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/textinput2" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textinput4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_16"
-            android:fontFamily="@font/lalezar"
-            android:hint="@string/homephonenumber"
-            android:maxLines="1"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/textinput3" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardview"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/space_16"
-            android:layout_marginStart="@dimen/space_8"
-            android:layout_marginTop="@dimen/space_20"
-            android:layout_marginEnd="@dimen/space_8"
-
-            android:backgroundTint="@color/background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textinput4" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/textinput5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_16"
-            android:fontFamily="@font/lalezar"
-            android:hint="@string/address"
-            android:maxLines="1"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/cardview" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_16"
-            android:fontFamily="@font/lalezar"
-            android:text="@string/gender"
-            app:layout_constraintEnd_toEndOf="@id/guideline_right"
-            app:layout_constraintTop_toBottomOf="@id/textinput5" />
-
-        <RadioGroup
-            android:id="@+id/radiogroup"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/space_16"
-            android:orientation="horizontal"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/textinput5">
-
-            <RadioButton
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:checked="true"
+                android:layout_margin="@dimen/space_16"
                 android:fontFamily="@font/lalezar"
-                android:text="@string/male" />
+                android:text="@string/gender"
+                app:layout_constraintEnd_toEndOf="@id/guideline_right"
+                app:layout_constraintTop_toBottomOf="@id/textinput5" />
 
-            <RadioButton
-                android:layout_width="wrap_content"
+            <RadioGroup
+                android:id="@+id/radiogroup"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:checked="false"
-                android:fontFamily="@font/lalezar"
-                android:text="@string/female" />
+                android:layout_marginStart="@dimen/space_16"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/textinput5">
 
-        </RadioGroup>
+                <RadioButton
+                    android:id="@+id/rb_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:fontFamily="@font/lalezar"
+                    android:text="@string/male" />
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="0dp"
-            android:layout_height="@dimen/space_72"
-            android:layout_marginTop="@dimen/space_40"
-            android:backgroundTint="@color/background"
-            app:layout_constraintEnd_toEndOf="@+id/guideline_right"
-            app:layout_constraintStart_toStartOf="@+id/guideline_left"
-            app:layout_constraintTop_toBottomOf="@+id/radiogroup">
+                <RadioButton
+                    android:id="@+id/rb_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:fontFamily="@font/lalezar"
+                    android:text="@string/female" />
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/space_52"
-                android:layout_gravity="center"
-                android:layout_marginStart="@dimen/space_20"
-                android:layout_marginEnd="@dimen/space_20"
-                android:fontFamily="@font/lalezar"
-                android:text="@string/nextstep" />
+            </RadioGroup>
 
-        </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="@dimen/space_72"
+                android:layout_marginTop="@dimen/space_40"
+                android:backgroundTint="@color/background"
+                app:layout_constraintEnd_toEndOf="@+id/guideline_right"
+                app:layout_constraintStart_toStartOf="@+id/guideline_left"
+                app:layout_constraintTop_toBottomOf="@+id/radiogroup">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_52"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/space_20"
+                    android:layout_marginEnd="@dimen/space_20"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:fontFamily="@font/lalezar"
+                    android:onClick="@{()->viewmodel.setUserInfo()}"
+                    android:text="@string/nextstep"
+                    android:textColor="?attr/colorOnPrimary" />
+
+            </androidx.cardview.widget.CardView>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-</FrameLayout>
+    </FrameLayout>
+</layout>
