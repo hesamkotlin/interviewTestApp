@@ -23,7 +23,7 @@ data class UserInfo(
     val coordinatePhoneNumber: String,
 
     @SerializedName("gender")
-    val gender: String,
+    val gender: Gender,
 
     @SerializedName("lat")
     val lat: Double,
