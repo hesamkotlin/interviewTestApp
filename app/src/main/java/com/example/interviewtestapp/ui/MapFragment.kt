@@ -64,6 +64,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
+        googleMap.setOnMapClickListener { setGoogleMapComponents(it) }
         mGoogleMap = googleMap
     }
 
@@ -104,7 +105,9 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     @SuppressLint("MissingPermission")
     private fun setGoogleMapComponents(latLng: LatLng) {
+        viewModel.setLocation(latLng.latitude, latLng.longitude)
         mGoogleMap.isMyLocationEnabled = true
+        mGoogleMap.clear()
         mGoogleMap.addMarker(
             MarkerOptions().position(latLng).title("my location")
         )
