@@ -21,4 +21,6 @@
     <string name="phone_number_empty_error">شماره تلفن نمیتواند خالی باشد</string>
     <string name="phone_number_format_error">فرمت شماره تلفن صحیح نیست</string>
     <string name="address_empty_error">آدرس نمیتواند خالی باشد</string>
+    <string name="location_empty_error">مکان را انتخاب کنید</string>
+    <string name="submit">تایید مکان</string>
 </resources>
