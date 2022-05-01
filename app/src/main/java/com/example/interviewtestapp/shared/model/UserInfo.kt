@@ -1,7 +1,11 @@
 package com.example.interviewtestapp.shared.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+
+@Parcelize
 data class UserInfo(
 
     @SerializedName("first_name")
@@ -11,7 +15,7 @@ data class UserInfo(
     val lastName: String,
 
     @SerializedName("region")
-    val region: String,
+    val region: String = "1",
 
     @SerializedName("address")
     val address: String,
@@ -26,9 +30,9 @@ data class UserInfo(
     val gender: Gender,
 
     @SerializedName("lat")
-    val lat: Double,
+    val lat: Double? = null,
 
     @SerializedName("lng")
-    val lng: Double,
+    val lng: Double? = null,
 
-    )
+    ) : Parcelable
