@@ -30,9 +30,9 @@ data class UserInfo(
     val gender: Gender,
 
     @SerializedName("lat")
-    val lat: Double? = null,
+    var lat: Double? = null,
 
     @SerializedName("lng")
-    val lng: Double? = null,
+    var lng: Double? = null,
 
     ) : Parcelable
