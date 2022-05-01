@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.interviewtestapp.ui.MapFragment"
-        android:label="MapFragment" />
+        android:label="MapFragment" >
+        <argument
+            android:name="userInfo"
+            app:argType="com.example.interviewtestapp.shared.model.UserInfo" />
+    </fragment>
     <fragment
         android:id="@+id/authFragmnet"
         android:name="com.example.interviewtestapp.ui.AuthFragment"
