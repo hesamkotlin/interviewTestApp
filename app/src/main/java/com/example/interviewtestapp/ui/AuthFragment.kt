@@ -20,8 +20,7 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class AuthFragment : Fragment() {
 
-    @Inject
-    lateinit var userRepository: UserRepository
+
     private val viewModel: AuthViewModel by viewModels()
 
 
