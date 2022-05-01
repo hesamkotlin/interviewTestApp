@@ -10,6 +10,12 @@ class MapViewModel @Inject constructor(
     private val repository: UserRepository
 ) : ViewModel() {
 
+    private var mLatitude: Double? = null
+    private var mLongitude: Double? = null
 
+    fun setLocation(latitude: Double, longitude: Double) {
+        mLatitude = latitude
+        mLongitude = longitude
+    }
 
 }
