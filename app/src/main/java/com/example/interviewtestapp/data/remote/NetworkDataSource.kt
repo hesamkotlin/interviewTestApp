@@ -14,8 +14,13 @@ class NetworkDataSource @Inject constructor(
 
     suspend fun setUserInfo(
         userInfo: UserInfo
-    ): Resource.Success<User>{
-        return Resource.Success(webService.setUserInfo(userInfo).mapToUser())
+    ): Resource<User>{
+        try {
+            val userResponseList = webService.setUserInfo(userInfo)
+            return Resource.Success(userResponseList.mapToUser())
+        }catch (e: Exception){
+            return Resource.Failure<User>(e)
+        }
     }
 
 }

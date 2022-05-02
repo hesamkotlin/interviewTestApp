@@ -15,7 +15,7 @@ class UserRepository @Inject constructor(
     }
     suspend fun setUserInfo(
         userInfo: UserInfo
-    ): Resource.Success<User>{
+    ): Resource<User>{
         return networkDataSource.setUserInfo(userInfo)
     }
 
