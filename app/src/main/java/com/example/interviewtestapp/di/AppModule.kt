@@ -34,7 +34,7 @@ object AppModule {
 
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(httplogger)
-//            .addInterceptor(BasicAuthInterceptor(constants.USERNAME, constants.PASSWORD))
+            .addInterceptor(BasicAuthInterceptor(constants.USERNAME, constants.PASSWORD))
             .build()
 
         return Retrofit.Builder()
