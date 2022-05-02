@@ -13,6 +13,7 @@ import com.example.interviewtestapp.databinding.FragmentAuthBinding
 import com.example.interviewtestapp.domain.UserRepository
 import com.example.interviewtestapp.shared.model.UserInfo
 import com.example.interviewtestapp.ui.util.observe
+import com.example.interviewtestapp.ui.util.showToast
 import com.example.interviewtestapp.ui.viewmodel.AuthViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -55,11 +56,7 @@ class AuthFragment : Fragment() {
     }
 
     private fun toastError(errorMessageId: Int) {
-        Toast.makeText(
-            requireContext(),
-            getString(errorMessageId),
-            Toast.LENGTH_SHORT
-        ).show()
+        showToast(getString(errorMessageId))
     }
 
     private fun navigateToMap(userInfo: UserInfo) {

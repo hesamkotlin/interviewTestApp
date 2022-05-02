@@ -15,6 +15,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
 import com.example.interviewtestapp.databinding.FragmentMapBinding
 import com.example.interviewtestapp.ui.util.observe
+import com.example.interviewtestapp.ui.util.showToast
 import com.example.interviewtestapp.ui.viewmodel.MapViewModel
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -52,8 +53,8 @@ class MapFragment : Fragment(), OnMapReadyCallback {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         viewModel.setUserInfo(args.userInfo)
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         observe(viewModel.failure) { toastError(it) }
         getPermission()
     }
@@ -143,11 +144,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun toastError(errorMessageId: Int) {
-        Toast.makeText(
-            requireContext(),
-            getString(errorMessageId),
-            Toast.LENGTH_SHORT
-        ).show()
+      showToast(getString(errorMessageId))
     }
 }
 
