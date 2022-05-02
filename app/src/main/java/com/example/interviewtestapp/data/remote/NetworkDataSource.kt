@@ -8,18 +8,23 @@ import javax.inject.Inject
 class NetworkDataSource @Inject constructor(
     private val webService: WebService
 ) {
-    suspend fun getUserList(): Resource.Success<List<User>>{
-        return Resource.Success(webService.getUsersList().map { it.mapToUser() })
+    suspend fun getUserList(): Resource<List<User>>{
+        return try {
+            val userResponseList = webService.getUsersList()
+            Resource.Success(userResponseList.map { it.mapToUser() })
+        }catch (e: Exception){
+            Resource.Failure(e)
+        }
     }
 
     suspend fun setUserInfo(
         userInfo: UserInfo
     ): Resource<User>{
-        try {
+        return try {
             val userResponseList = webService.setUserInfo(userInfo)
-            return Resource.Success(userResponseList.mapToUser())
+            Resource.Success(userResponseList.mapToUser())
         }catch (e: Exception){
-            return Resource.Failure<User>(e)
+            Resource.Failure(e)
         }
     }
 
