@@ -12,6 +12,9 @@
         <argument
             android:name="userInfo"
             app:argType="com.example.interviewtestapp.shared.model.UserInfo" />
+        <action
+            android:id="@+id/navigate_to_list_fragment"
+            app:destination="@id/listFragment" />
     </fragment>
     <fragment
         android:id="@+id/authFragmnet"
@@ -19,7 +22,11 @@
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth" >
         <action
-            android:id="@+id/action_authFragmnet_to_mapFragment"
+            android:id="@+id/navigate_to_map_fragment"
             app:destination="@id/mapFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.interviewtestapp.ui.ListFragment"
+        android:label="ListFragment" />
 </navigation>
