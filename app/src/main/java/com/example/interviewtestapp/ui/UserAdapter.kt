@@ -2,7 +2,6 @@ package com.example.interviewtestapp.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ListAdapter
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +10,7 @@ import com.example.interviewtestapp.shared.model.User
 import com.example.interviewtestapp.databinding.ItemLinearCardBinding as ItemLinearCardBinding1
 
 
-class GifAdapter: androidx.recyclerview.widget.ListAdapter<User, GifAdapter.UserViewHolder>(
+class UserAdapter: androidx.recyclerview.widget.ListAdapter<User, UserAdapter.UserViewHolder>(
     object : DiffUtil.ItemCallback<User>() {
         override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
             return oldItem.firstName == newItem.firstName
