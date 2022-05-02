@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="viewmodel"
+            type="com.example.interviewtestapp.ui.viewmodel.ListViewModel" />
 
     </data>
 
@@ -24,11 +27,25 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/user_recycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_label"
             tools:listitem="@layout/item_linear_card" />
+        <FrameLayout
+            visibleGone="@{viewmodel.loading}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#50000000"
+            tools:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:indeterminateTint="?attr/colorPrimary" />
+        </FrameLayout>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
