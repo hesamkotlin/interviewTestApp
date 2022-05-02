@@ -19,11 +19,14 @@ class MapViewModel @Inject constructor(
     private val repository: UserRepository
 ) : ViewModel() {
 
-    private val mFailure = MutableLiveData<Int>()
-    val failure: LiveData<Int> = mFailure
+    private val mMessage = MutableLiveData<Int>()
+    val message: LiveData<Int> = mMessage
 
     private val mLoading = MutableLiveData<Boolean>(false)
     val loading: LiveData<Boolean> = mLoading
+
+    private val mNavigateToListView = MutableLiveData<Unit>()
+    val navigateToListFragment : LiveData<Unit> = mNavigateToListView
 
     private lateinit var mUserInfo: UserInfo
     private var mLatitude: Double? = null
@@ -43,7 +46,7 @@ class MapViewModel @Inject constructor(
         val latitude = mLatitude
         val longitude = mLongitude
         if (latitude == null || longitude == null) {
-            mFailure.value = R.string.location_empty_error
+            mMessage.value = R.string.location_empty_error
             return
         }
         viewModelScope.launch(Dispatchers.IO) {
@@ -55,9 +58,11 @@ class MapViewModel @Inject constructor(
             })
             mLoading.postValue(false)
             if (response is Resource.Success){
+                mMessage.postValue(R.string.data_submited_to_server)
+                mNavigateToListView.postValue(Unit)
 
             }else{
-                mFailure.postValue(R.string.server_error)
+                mMessage.postValue(R.string.server_error)
                 Log.d("hesam", (response as Resource.Failure).exception.toString())
             }
         }

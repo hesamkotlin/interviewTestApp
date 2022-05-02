@@ -7,11 +7,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.RelativeLayout
-import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.interviewtestapp.databinding.FragmentMapBinding
 import com.example.interviewtestapp.ui.util.observe
@@ -55,8 +54,14 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         super.onViewCreated(view, savedInstanceState)
         viewModel.setUserInfo(args.userInfo)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
-        observe(viewModel.failure) { toastError(it) }
+        observe(viewModel.message) { toastError(it) }
+        observe(viewModel.navigateToListFragment){ navigateToListFragment()}
         getPermission()
+    }
+
+    private fun navigateToListFragment() {
+        val navDirection = MapFragmentDirections.navigateToListFragment()
+        findNavController().navigate(navDirection)
     }
 
     private fun initMapView(savedInstanceState: Bundle?) {
