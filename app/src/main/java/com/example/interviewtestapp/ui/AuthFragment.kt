@@ -60,7 +60,7 @@ class AuthFragment : Fragment() {
     }
 
     private fun navigateToMap(userInfo: UserInfo) {
-        val navDirection = AuthFragmentDirections.actionAuthFragmnetToMapFragment(userInfo)
+        val navDirection = AuthFragmentDirections.navigateToMapFragment(userInfo)
         findNavController().navigate(navDirection)
     }
 
