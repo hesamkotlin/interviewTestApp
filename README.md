@@ -1,4 +1,4 @@
-I wrote this program fully with cotlin. i used these libraries for devlope App such as :
+I wrote this program fully with kotlin. i used these libraries for devlope App such as :
 
 for DI : Hilt
 for Restful API requests : Retrofit & okHttp
