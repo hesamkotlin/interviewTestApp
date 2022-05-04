@@ -1,12 +1,12 @@
 I wrote this program fully with kotlin. i used these libraries for devlope App such as :
 
-for DI : Hilt 
-for Restful API requests : Retrofit & okHttp
-for network modles : gson convertor
-for navigation : navigation component
-for Asynchronous programing : Coroutines
-for Map : google Maps 
-for viewing data : Recycler view
+for DI : Hilt +
+for Restful API requests : Retrofit & okHttp +
+for network modles : gson convertor + 
+for navigation : navigation component + 
+for Asynchronous programing : Coroutines + 
+for Map : google Maps +
+for viewing data : Recycler view +
 and others .
 ___________________________________________________________________________________________________
 
