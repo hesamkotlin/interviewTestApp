@@ -6,7 +6,7 @@ import androidx.databinding.BindingAdapter
 
 
 @BindingAdapter("visibleGone")
-fun visibleOrGone(view: View, visible: Boolean?){
+fun visibleOrGone(view: View, visible: Boolean?) {
     visible ?: return
     view.isVisible = visible
 }

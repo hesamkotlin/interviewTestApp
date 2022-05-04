@@ -1,7 +1,7 @@
 package com.example.interviewtestapp.di
 
 import androidx.viewbinding.BuildConfig
-import com.example.interviewtestapp.constants
+import com.example.interviewtestapp.Constants
 import com.example.interviewtestapp.data.remote.BasicAuthInterceptor
 import com.example.interviewtestapp.data.remote.NetworkDataSource
 import com.example.interviewtestapp.data.remote.WebService
@@ -24,7 +24,6 @@ object AppModule {
     ): WebService {
         val gson = GsonBuilder().setLenient().create()
 
-
         val httplogger = HttpLoggingInterceptor().apply {
             level = if (BuildConfig.DEBUG)
                 HttpLoggingInterceptor.Level.BODY
@@ -34,17 +33,16 @@ object AppModule {
 
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(httplogger)
-            .addInterceptor(BasicAuthInterceptor(constants.USERNAME, constants.PASSWORD))
+            .addInterceptor(BasicAuthInterceptor(Constants.USERNAME, Constants.PASSWORD))
             .retryOnConnectionFailure(true)
             .build()
 
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl(constants.BASE_URL)
+            .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
             .create(WebService::class.java)
-
     }
 
     @Provides

@@ -8,7 +8,6 @@
         <variable
             name="viewmodel"
             type="com.example.interviewtestapp.ui.viewmodel.AuthViewModel" />
-
     </data>
 
     <FrameLayout

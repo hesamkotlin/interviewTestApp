@@ -5,9 +5,10 @@
       <map>
         <entry key="..\:/Users/Hesam/AndroidStudioProjects/interviewTestApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Hesam/AndroidStudioProjects/interviewTestApp/app/src/main/res/layout/fragment_auth.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Hesam/AndroidStudioProjects/interviewTestApp/app/src/main/res/layout/fragment_list.xml" value="0.35260416666666666" />
-        <entry key="..\:/Users/Hesam/AndroidStudioProjects/interviewTestApp/app/src/main/res/layout/fragment_map.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Hesam/AndroidStudioProjects/interviewTestApp/app/src/main/res/layout/item_linear_card.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Hesam/AndroidStudioProjects/interviewTestApp/app/src/main/res/layout/fragment_list.xml" value="0.33" />
+        <entry key="..\:/Users/Hesam/AndroidStudioProjects/interviewTestApp/app/src/main/res/layout/fragment_listt.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Hesam/AndroidStudioProjects/interviewTestApp/app/src/main/res/layout/fragment_map.xml" value="0.25" />
+        <entry key="..\:/Users/Hesam/AndroidStudioProjects/interviewTestApp/app/src/main/res/layout/item_linear_card.xml" value="0.25" />
       </map>
     </option>
   </component>

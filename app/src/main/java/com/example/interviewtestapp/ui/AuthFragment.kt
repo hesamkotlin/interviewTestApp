@@ -23,8 +23,6 @@ class AuthFragment : Fragment() {
 
 
     private val viewModel: AuthViewModel by viewModels()
-
-
     private lateinit var mBinding: FragmentAuthBinding
 
     override fun onCreateView(
@@ -32,7 +30,6 @@ class AuthFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         mBinding = FragmentAuthBinding.inflate(inflater, container, false)
-        // Inflate the layout for this fragment
         mBinding.viewmodel = viewModel
         mBinding.lifecycleOwner = this
         return mBinding.root

@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName
 enum class Gender {
     @SerializedName("Male")
     MALE,
+
     @SerializedName("Female")
     FEMALE
 }

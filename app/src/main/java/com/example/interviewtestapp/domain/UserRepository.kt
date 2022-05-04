@@ -13,9 +13,10 @@ class UserRepository @Inject constructor(
     suspend fun getUserList(): Resource<List<User>> {
         return networkDataSource.getUserList()
     }
+
     suspend fun setUserInfo(
         userInfo: UserInfo
-    ): Resource<User>{
+    ): Resource<User> {
         return networkDataSource.setUserInfo(userInfo)
     }
 

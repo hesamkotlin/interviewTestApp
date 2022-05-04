@@ -18,8 +18,8 @@ fun <T> Fragment.observe(liveData: LiveData<T>?, action: (t: T) -> Unit) {
     viewLifecycleOwner.observe(liveData, action)
 }
 
-fun Fragment.showToast(message: String){
-    val toast =  Toast.makeText(requireContext(),message,Toast.LENGTH_SHORT)
+fun Fragment.showToast(message: String) {
+    val toast = Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT)
     val toastLayout = toast.view as LinearLayout?
     val toastTV = toastLayout!!.getChildAt(0) as TextView
     val font = ResourcesCompat.getFont(requireContext(), R.font.lalezar)

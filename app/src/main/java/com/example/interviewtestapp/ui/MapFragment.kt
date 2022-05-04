@@ -55,7 +55,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         viewModel.setUserInfo(args.userInfo)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(requireActivity())
         observe(viewModel.message) { toastError(it) }
-        observe(viewModel.navigateToListFragment){ navigateToListFragment()}
+        observe(viewModel.navigateToListFragment) { navigateToListFragment() }
         getPermission()
     }
 
@@ -111,7 +111,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
                     LatLng(35.68801713567976, 51.39160757066868)
                 }
                 setGoogleMapComponents(latLng)
-
             }
     }
 
@@ -123,7 +122,6 @@ class MapFragment : Fragment(), OnMapReadyCallback {
         mGoogleMap.addMarker(
             MarkerOptions().position(latLng).title("my location")
         )
-
         val cameraPosition = CameraPosition.Builder().target(latLng).zoom(12f).build()
         mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
     }
@@ -149,7 +147,7 @@ class MapFragment : Fragment(), OnMapReadyCallback {
     }
 
     private fun toastError(errorMessageId: Int) {
-      showToast(getString(errorMessageId))
+        showToast(getString(errorMessageId))
     }
 }
 

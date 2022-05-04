@@ -10,7 +10,7 @@ import com.example.interviewtestapp.shared.model.User
 import com.example.interviewtestapp.databinding.ItemLinearCardBinding as ItemLinearCardBinding1
 
 
-class UserAdapter: androidx.recyclerview.widget.ListAdapter<User, UserAdapter.UserViewHolder>(
+class UserAdapter : androidx.recyclerview.widget.ListAdapter<User, UserAdapter.UserViewHolder>(
     object : DiffUtil.ItemCallback<User>() {
         override fun areItemsTheSame(oldItem: User, newItem: User): Boolean {
             return oldItem.firstName == newItem.firstName
@@ -19,9 +19,7 @@ class UserAdapter: androidx.recyclerview.widget.ListAdapter<User, UserAdapter.Us
         override fun areContentsTheSame(oldItem: User, newItem: User): Boolean {
             return oldItem.hashCode() == newItem.hashCode()
         }
-
     }
-
 ) {
 
     inner class UserViewHolder(
@@ -50,5 +48,4 @@ class UserAdapter: androidx.recyclerview.widget.ListAdapter<User, UserAdapter.Us
     override fun getItemCount(): Int {
         return currentList.count()
     }
-
 }

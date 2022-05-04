@@ -19,11 +19,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class ListFragment : Fragment() {
 
     private lateinit var mBinding: FragmentListBinding
-
     private val viewModel: ListViewModel by viewModels()
-
     private val userAdapter = UserAdapter()
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +31,6 @@ class ListFragment : Fragment() {
             lifecycleOwner = this@ListFragment
         }
         return mBinding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,5 +51,4 @@ class ListFragment : Fragment() {
     private fun toastError(errorMessageId: Int) {
         showToast(getString(errorMessageId))
     }
-
 }
