@@ -1,6 +1,6 @@
 I wrote this program fully with kotlin. i used these libraries for devlope App such as :
 
-for DI : Hilt /n
+for DI : Hilt 
 for Restful API requests : Retrofit & okHttp
 for network modles : gson convertor
 for navigation : navigation component
